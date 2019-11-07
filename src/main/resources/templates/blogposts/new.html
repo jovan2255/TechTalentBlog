@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Blog Site</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
+	type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/blog.css" />
+</head>
+    
+    <body>
+    
+    <div th:replace="fragments/navbar :: navbar" ></div>
+    <div class="container">
+    
+    	<div class="container rounded col-md-6 jumbotron">
+
+    
+        <h1 >Add A Post</h1>
+
+<p>Please use the form below to submit a Blog Post:</p>
+
+      <form name="myform" id="postbutton" action="#" th:action="@{/results}" th:object="${blogPost}" method="post">
+    <table>
+
+	
+	<input type="hidden" th:field="*{id}" />
+	<tr>
+	
+            <td>Title</td>
+	    <td><input type="text" th:field="*{title}" /></td>
+	</tr>
+	<tr>
+	    <td>Author:</td>
+	    <td><input type="text" th:field="*{author}" /></td>
+	</tr>
+	<tr>
+    	    <td>Blog Entry:</td>
+	    <td><input type="text" th:field="*{blogEntry}" /></td>
+	</tr>
+	<tr>
+
+	</tr>
+    </table>
+    <a type="submit" href="javascript: submitform()" class="rotate-button">
+  <span class="rotate-button-face">Submit Post</span>
+  <span class="rotate-button-face-back">Good Choice</span></a>
+</form>
+            <a type="button" href="http://localhost:8080" class="rotate-button">
+  <span class="rotate-button-face">Go Home</span>
+  <span class="rotate-button-face-back">Good Choice</span>
+</a>     
+        
+        <h3>Check out our blogs!</h3>
+          <script type="text/javascript"> 
+        function submitform() {   document.myform.submit(); } 
+   </script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+   </div>
+   
+   </div>
+   
+    </body>
+</html>

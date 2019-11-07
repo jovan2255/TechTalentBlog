@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+	    <title>Blog Site</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ 
+    </head>
+    <body>
+    <div class="container">
+        <h1 class="text-success">Welcome to Our Blog Post Site!</h1>
+
+<p>Please use the form below to submit a Blog Post:</p>
+
+      <form action="#" th:action="@{/results}" th:object="${blogPost}" method="post">
+    <table>
+	<tr>
+            <td>Title</td>
+	    <td><input type="text" th:field="*{title}" /></td>
+	</tr>
+	<tr>
+	    <td>Author:</td>
+	    <td><input type="text" th:field="*{author}" /></td>
+	</tr>
+	<tr>
+    	    <td>Blog Entry:</td>
+	    <td><input type="text" th:field="*{blogEntry}" /></td>
+	</tr>
+	<tr>
+	    <td><button type="submit">Submit Your Post</button></td>
+	</tr>
+    </table>
+</form>
+            <a type="button" href="http://localhost:8080" class="btn btn-success">Home</a>     
+
+        
+        <h3>Check out our blogs!</h3>
+        
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+   </div>
+    </body>
+</html>

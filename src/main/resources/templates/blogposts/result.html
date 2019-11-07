@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Blog Site</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <link rel = "stylesheet"
+   type = "text/css"
+   href = "/blog.css" />
+    </head>
+    
+  <body>
+  <div class="container">
+    <h3>Blog Post Form</h3>
+    <p>Thank you for your submission!</p>
+    <h4>Blog Post:</h4>
+    
+ 
+ <p th:text="${id}" />
+    <p th:text="${title}" />
+    <p th:text="${author}" />
+    <p th:text="${blogEntry}" />
+    
+    
+      <div class="row">
+    <div th:each="blog:${posts}">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p th:text="${blog.title}"/>
+		</div>
+	    <div class="panel-body">
+		<p th:text="${blog.author}"/>
+		<p th:text="${blog.blogEntry}" />
+	    </div>
+	    <div class="panel-footer">
+		<!-- Link to Update -->
+		<!-- Link to Show  -->
+		<!--  Link to Destroy -->
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+    
+    <a type="button" href="http://localhost:8080" class="btn btn-dark">Home</a>     
+   <a type="button" href="http://localhost:8080/new" class="btn btn-dark">Submit A New Blog Post</a>     
+  </div>
+  
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+  
+   
+  </body>
+</html>
